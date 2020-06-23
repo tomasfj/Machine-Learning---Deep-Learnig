@@ -1,0 +1,8 @@
+epochs: 10
+patience: 0
+learning_rate: 0.001
+batch_size: 100
+dataset: anotations.csv
+drop_out_rate: 0.7
+input_folder: ./dataset/flores/
+output_folder: ./dataset/output/
