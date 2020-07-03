@@ -30,10 +30,13 @@ ap = argparse.ArgumentParser()
 ap.add_argument('-d', '--dataset', required=True, help='CSV dataset file')
 ap.add_argument('-i', '--input_folder', required=True, help='Data input folder')
 ap.add_argument('-o', '--output_folder', required=True, help='Results/debug output folder')
+# taxa com que os pesos são atualizados (batch = 1 -> atualiza uma imagem, atualiza os pesos)
 ap.add_argument('-b', '--batch_size', type=int, default=100, help='Learning batch size')
 ap.add_argument('-l', '--learning_rate', type=float, default=1e-3, help='Learning rate')
+# taxa de esquecimento. Forma de regularizar o modelo e prevenir overfitting (ajuda a reduzir aprendizagem independente entre neurões)
 ap.add_argument('-r', '--drop_out_rate', type=float, default=0.7, help='Drop out rate used in the deep model')
 ap.add_argument('-e', '--epochs', type=int, default=10, help='Tot. epochs')
+# grau de paciência - parar o treino se a loss aumentar x iteraações seguidas
 ap.add_argument('-p', '--patience', type=int, default=0, help='Maximum number of consecutive iterations increasing loss')
 
 args = vars(ap.parse_args())
@@ -278,6 +281,7 @@ for e in range(args['epochs']):
         t_loss = sess.run(loss, feed_dict={x_inputs: rand_imgs, y_targets: rand_targets})
 
         #print('Learning\t Epoch \t \{\}/\{\} \t Batch \{\}/\{\} \t Loss=\{:.5f\}'.format(e + 1, args['epochs'], (i + 1) // args['batch_size'] + 1, math.ceil(len(learning_samples) / args['batch_size']), t_loss))
+        print('Learning - Epoch - {}/{} - Batch {}/{} - Loss= {:.5f}'.format(e + 1, args['epochs'], (i + 1) // args['batch_size'] + 1, math.ceil(len(learning_samples) / args['batch_size']), t_loss))
         i += args['batch_size']
         epoch_loss += t_loss * len(rand_idx)
 
