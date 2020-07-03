@@ -1,0 +1,43 @@
+Flor 1: 128
+Flor 2: 321
+Flor 3: 345
+Flor 4: 543
+Flor 5: 457
+Flor 6: 507
+Flor 7: 562
+Total = 2863
+
+
+
+
+Relatorio:
+https://searchenterpriseai.techtarget.com/definition/deep-learning-deep-neural-network
+
+
+
+
+2020_07_02_01_58_34 -> default (batch-size: 100, learning-rate: 0.001, dropout:0.7, epochs: 10, patience: 0) -> ACCURACY: 0.2454 
+
+
+2020_07_02_02_49_13 -> batch-size: 50, default -> ACCURACY: 0.1595
+2020_07_02_15_06_12 -> batch-size: 25, default -> ACCURACY: 0.4785
+2020_07_02_15_14_18 -> batch-size: 10, default -> ACCURACY: 0.8926
+
+2020_07_02_19_31_51 -> batch-size: 10, epochs: 15, default -> ACCURACY: 0.9049
+2020_07_02_15_26_19 -> batch-size: 10, epochs: 20, default -> ACCURACY: 0.9724
+2020_07_02_19_41_12 -> batch-size: 10, epochs: 25, default -> ACCURACY: 0.9785
+2020_07_02_16_12_07 -> batch-size: 10, epochs: 30, default -> ACCURACY: 0.9816
+2020_07_02_19_52_39 -> batch-size: 10, epochs: 35, default -> ACCURACY: 0.9847 
+2020_07_02_20_21_43 -> batch-size: 10, epochs: 40, default -> ACCURACY: 0.9785
+
+2020_07_03_00_56_19 -> batch-size: 10, epochs: 25, learning-rate: 0.1 default -> ACCURACY: 0.1503 
+2020_07_02_16_44_17 -> batch-size: 10, epochs: 25, learning-rate: 0.01 default -> ACCURACY: 0.9816
+2020_07_02_16_56_18 -> batch-size: 10, epochs: 25, learning-rate: 0.0001 default -> ACCURACY: 0.1902
+
+
+2020_07_02_17_59_59 -> batch-size: 10, epochs: 25, dropout: 0.3 -> ACCURACY: 0.7638
+2020_07_02_18_12_19 -> batch-size: 10, epochs: 25, dropout: 0.9 -> ACCURACY: 0.9601
+
+
+2020_07_03_03_38_15 -> dataset: 0.5, batch-size: 10, epochs: 25, default -> ACCURACY: 0.8957 
+2020_07_03_03_44_37 -> dataset: 0.25, batch-size: 10, epochs: 25, default -> ACCURACY: 0.6829
